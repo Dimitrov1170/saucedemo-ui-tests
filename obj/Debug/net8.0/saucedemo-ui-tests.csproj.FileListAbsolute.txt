@@ -103,3 +103,4 @@ C:\Users\PC-5\source\repos\saucedemo-ui-tests\saucedemo-ui-tests\obj\Debug\net8.
 C:\Users\PC-5\source\repos\saucedemo-ui-tests\saucedemo-ui-tests\obj\Debug\net8.0\saucedemo-ui-tests.pdb
 C:\Users\PC-5\source\repos\saucedemo-ui-tests\saucedemo-ui-tests\obj\Debug\net8.0\saucedemo-ui-tests.genruntimeconfig.cache
 C:\Users\PC-5\source\repos\saucedemo-ui-tests\saucedemo-ui-tests\obj\Debug\net8.0\ref\saucedemo-ui-tests.dll
+C:\Users\PC-5\source\repos\saucedemo-ui-tests\saucedemo-ui-tests\obj\Debug\net8.0\saucedemo-ui-tests.sourcelink.json

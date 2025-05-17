@@ -9,7 +9,10 @@ namespace Drivers
         {
             var options = new ChromeOptions();
             options.AddArgument("--start-maximized");
+            options.AddUserProfilePreference("credentials_enable_service", false);
+            options.AddUserProfilePreference("profile.password_manager_enabled", false);
             return new ChromeDriver(options);
         }
+
     }
 }
