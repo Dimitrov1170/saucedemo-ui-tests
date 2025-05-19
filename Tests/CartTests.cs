@@ -5,17 +5,8 @@ using Pages;
 
 namespace Tests
 {
-    public class CartTests
+    public class CartTests : BaseTest
     {
-        private IWebDriver driver;
-        private const string url = "https://www.saucedemo.com/";
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = WebDriverFactory.Create();
-            driver.Navigate().GoToUrl(url);
-        }
 
         [Test]
         public void AddItemToCart_ShouldIncreaseCartBadge()
@@ -56,13 +47,6 @@ namespace Tests
             var sorted = prices.OrderBy(p => p).ToList();
 
             CollectionAssert.AreEqual(sorted, prices);
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            driver.Quit();
-            driver.Dispose();
         }
     }
 }

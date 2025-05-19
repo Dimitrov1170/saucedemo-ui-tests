@@ -6,18 +6,9 @@ using Utilities;
 
 namespace Tests
 {
-    public class LoginTests
+    public class LoginTests : BaseTest
     {
-        private IWebDriver driver;
-        private const string url = "https://www.saucedemo.com/";
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = WebDriverFactory.Create();
-            driver.Navigate().GoToUrl(url);
-        }
-
+        
         [Test]
         public void Login_WithValidCredentials_ShouldSucceed()
         {
@@ -43,15 +34,6 @@ namespace Tests
             var error = WaitHelper.WaitForElementVisible(driver, By.CssSelector("[data-test='error']")).Text;
 
             Assert.That(error, Does.Contain("Username is required"));
-        }
-
-
-
-        [TearDown]
-        public void TearDown()
-        {
-            driver.Quit();
-            driver.Dispose();
         }
     }
 }

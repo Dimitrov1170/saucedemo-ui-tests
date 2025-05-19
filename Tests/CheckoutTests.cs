@@ -6,17 +6,8 @@ using Utilities;
 
 namespace Tests
 {
-    public class CheckoutTests
+    public class CheckoutTests : BaseTest
     {
-        private IWebDriver driver;
-        private const string url = "https://www.saucedemo.com/";
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = WebDriverFactory.Create();
-            driver.Navigate().GoToUrl(url);
-        }
 
         [Test]
         public void Checkout_WithValidData_ShouldProceedToOverviewPage()
@@ -59,16 +50,6 @@ namespace Tests
             string error = errorElement.Text;
 
             Assert.That(error, Does.Contain("Postal Code is required"));
-        }
-
-
-
-
-        [TearDown]
-        public void TearDown()
-        {
-            driver.Quit();
-            driver.Dispose();
         }
     }
 }
