@@ -8,8 +8,10 @@ The goal of this project is to demonstrate practical automation testing skills.
 
 ## ✅ Features
 
+- UI automation using C#, Selenium, and NUnit
 - Automated login tests (valid and invalid scenarios)
-- Add to cart functionality test
+- Chrome popup suppression for stable test execution
+- Organized test classes by feature (Login, Cart, Checkout)
 - Use of POM for clean test structure
 - Wait helper for stable UI interactions
 - Cross-browser-ready architecture (currently Chrome only)
@@ -28,15 +30,26 @@ The goal of this project is to demonstrate practical automation testing skills.
 
 ---
 
-## 🗂 Project Structure
+## 🧪 Test Coverage
 
-saucedemo-ui-tests/
-│
-├── Drivers/ → WebDriver config
-├── Pages/ → Page Object Model classes
-├── Tests/ → NUnit test classes
-├── Utilities/ → Reusable helpers (wait)
-├── saucedemo-ui-tests.csproj
+### 🔐 Login
+- [x] Valid login
+- [x] Invalid login
+- [x] Empty credentials
+
+### 🛒 Cart
+- [x] Add item to cart
+- [x] Remove item from cart
+- [x] Verify cart badge
+
+### 📦 Inventory
+- [x] Sort products by price (low to high)
+- [x] Verify product name and price consistency between inventory and cart
+
+### 💳 Checkout
+- [x] Proceed with valid data
+- [x] Error on missing required fields (postal code)
+- [x] Complete checkout and verify success message
 
 ---
 
@@ -54,6 +67,6 @@ Tests are intentionally beginner-friendly for learning and portfolio purposes.
 ---
 
 ##👨‍🎓 Author
-Georgi Dimitrov
+**Georgi Dimitrov**
 Junior QA Engineer
 Graduate of SoftUni
