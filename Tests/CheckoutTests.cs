@@ -51,5 +51,28 @@ namespace Tests
 
             Assert.That(error, Does.Contain("Postal Code is required"));
         }
+
+        [Test]
+        public void Checkout_Complete_ShouldShowSuccessMessage()
+        {
+            var loginPage = new LoginPage(driver);
+            loginPage.LoginAs("standard_user", "secret_sauce");
+
+            var inventoryPage = new InventoryPage(driver);
+            inventoryPage.AddBackpackToCart();
+            driver.FindElement(By.ClassName("shopping_cart_link")).Click();
+
+            var cartPage = new CartPage(driver);
+            cartPage.ClickCheckout();
+
+            var checkoutPage = new CheckoutPage(driver);
+            checkoutPage.FillInCheckoutInfo("Georgi", "Dimitrov", "1000");
+
+            checkoutPage.ClickFinish();
+
+            string message = checkoutPage.GetSuccessMessage();
+            Assert.That(message, Does.Contain("Thank you for your order!"));
+        }
+
     }
 }

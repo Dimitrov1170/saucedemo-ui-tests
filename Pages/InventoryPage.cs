@@ -10,11 +10,15 @@ namespace Pages
         private readonly By cartBadge = By.ClassName("shopping_cart_badge");
         private readonly By sortDropdown = By.ClassName("product_sort_container");
         private readonly By itemPrices = By.ClassName("inventory_item_price");
+        private readonly By backpackName = By.CssSelector(".inventory_item_name");
+        private readonly By backpackPrice = By.CssSelector(".inventory_item_price");
 
         public InventoryPage(IWebDriver driver) : base(driver) { }
 
         public void AddBackpackToCart() => Driver.FindElement(addToCartButton).Click();
         public void RemoveBackpackFromCart() => Driver.FindElement(removeBackpackButton).Click();
+        public string GetFirstProductName() => Driver.FindElements(backpackName)[0].Text;
+        public string GetFirstProductPrice() => Driver.FindElements(backpackPrice)[0].Text;
 
         public int GetCartItemCount()
         {

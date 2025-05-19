@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("saucedemo-ui-tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02e7e6d906f99d21121c9ef141829ea33b7e563b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7099b464aa74dac72b489b67cc06e661372ef51f")]
 [assembly: System.Reflection.AssemblyProductAttribute("saucedemo-ui-tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("saucedemo-ui-tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -48,5 +48,26 @@ namespace Tests
 
             CollectionAssert.AreEqual(sorted, prices);
         }
+
+        [Test]
+        public void ProductNameAndPrice_ShouldMatch_BetweenInventoryAndCart()
+        {
+            var loginPage = new LoginPage(driver);
+            loginPage.LoginAs("standard_user", "secret_sauce");
+
+            var inventoryPage = new InventoryPage(driver);
+            string productName = inventoryPage.GetFirstProductName();
+            string productPrice = inventoryPage.GetFirstProductPrice();
+
+            inventoryPage.AddBackpackToCart();
+            driver.FindElement(By.ClassName("shopping_cart_link")).Click();
+
+            string cartName = driver.FindElement(By.ClassName("inventory_item_name")).Text;
+            string cartPrice = driver.FindElement(By.ClassName("inventory_item_price")).Text;
+
+            Assert.That(cartName, Is.EqualTo(productName));
+            Assert.That(cartPrice, Is.EqualTo(productPrice));
+        }
+
     }
 }

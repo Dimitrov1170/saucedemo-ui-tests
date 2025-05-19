@@ -8,6 +8,8 @@ namespace Pages
         private readonly By lastName = By.Id("last-name");
         private readonly By postalCode = By.Id("postal-code");
         private readonly By continueButton = By.Id("continue");
+        private readonly By finishButton = By.Id("finish");
+        private readonly By completeHeader = By.ClassName("complete-header");
 
         public CheckoutPage(IWebDriver driver) : base(driver) { }
 
@@ -25,6 +27,13 @@ namespace Pages
             Driver.FindElement(continueButton).Click();
         }
 
+        public void ClickFinish() => Driver.FindElement(finishButton).Click();
+
+
+        public string GetSuccessMessage()
+        {
+            return Driver.FindElement(completeHeader).Text;
+        }
 
     }
 }
